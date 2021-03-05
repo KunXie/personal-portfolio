@@ -1,0 +1,8 @@
+.Home {
+  composes: GridContainer from "../../../index.css";
+  height: calc(100vh - 3rem);
+  row-gap: 1rem;
+}
+.Home.Data {
+  align-self: center;
+}

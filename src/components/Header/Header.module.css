@@ -1,0 +1,103 @@
+.Header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+}
+
+.Nav {
+  composes: GridContainer from "../../index.css";
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: var(--font-semi);
+}
+
+.NavLogo {
+  color: var(--second-color);
+}
+
+.NavToggle {
+  color: var(--second-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .NavMenu {
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 80%;
+    height: 100%;
+    padding: 2rem;
+    background-color: var(--second-color);
+    transition: 0.5s;
+  }
+}
+
+.NavItem {
+  margin-bottom: var(--mb-4);
+}
+
+.NavLink {
+  position: relative;
+  color: #fff;
+}
+
+.Active {
+  position: relative;
+}
+
+/* 这里就是一个下划线  */
+.Active::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+
+.NavLink:hover {
+  position: relative;
+}
+
+.NavLink:hover::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+
+@media screen and (min-width: 768px) {
+  .Nav {
+    height: calc(var(--header-height) + 1rem);
+  }
+
+  .NavList {
+    display: flex;
+    padding-top: 0;
+  }
+
+  .NavItem {
+    margin-left: var(--mb-6);
+    margin-bottom: 0;
+  }
+
+  .NavToggle {
+    display: none;
+  }
+
+  .NavLink {
+    color: var(--second-color);
+  }
+}
