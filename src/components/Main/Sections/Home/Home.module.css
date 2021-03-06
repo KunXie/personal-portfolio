@@ -1,0 +1,109 @@
+/*
+ * TODO: 这里还需要再调整，变得Responsive
+ * 这个component 一共有三个小块
+ * HomeData HomeImage
+ */
+.Home {
+  /* composes: GridContainer from "../../../../index.css"; */
+  height: calc(100vh - 3rem);
+  row-gap: 1rem;
+}
+
+.HomeData {
+  position: absolute;
+  top: 25%;
+  align-self: center;
+}
+
+@media screen and (max-width: 420px) {
+  .HomeData {
+    top: 10%;
+  }
+  .HomeTitle {
+    font-size: var(--h2-font-size);
+    margin-bottom: var(--mb-3);
+  }
+}
+
+.HomeTitle {
+  font-size: var(--big-font-size);
+  margin-bottom: var(--mb-5);
+}
+
+.HomeTitleColor {
+  color: var(--first-color);
+}
+
+.ContactButton {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 0.75rem 2.5rem;
+  font-weight: var(--font-semi);
+  border-radius: 0.5rem;
+  margin-bottom: var(--mb-5);
+}
+
+.ContactButton:hover {
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
+}
+
+.HomeSocial {
+  display: flex;
+  flex-direction: column;
+}
+
+.HomeSocialIcon {
+  width: max-content;
+  font-size: 1.5rem;
+  color: var(--second-color);
+}
+
+.HomeSocialIcon:hover {
+  color: var(--first-color);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
+}
+
+.HomeImage {
+  position: absolute;
+  width: 300px;
+  right: 0;
+  bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .Home {
+    height: 100vh;
+  }
+
+  .HomeData {
+    align-self: flex-end;
+  }
+
+  .HomeSocial {
+    padding-top: 0;
+    padding-bottom: 2.5rem;
+    flex-direction: row;
+    align-self: flex-end;
+  }
+
+  .HomeSocialIcon {
+    margin-bottom: 0;
+    margin-right: var(--mb-4);
+  }
+
+  .HomeImage {
+    width: 457px;
+    left: 55%;
+    bottom: 20%;
+  }
+}
+
+/* 这是我自己的改动 */
+@media screen and (min-width: 1100px) {
+  .HomeImage {
+    width: 457px;
+    left: 55%;
+    bottom: 40%;
+  }
+}

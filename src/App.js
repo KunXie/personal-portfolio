@@ -5,7 +5,13 @@ import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 
 function App() {
-  const sectionList = ["home", "about", "skills", "project", "contact"];
+  const sectionList = [
+    "home",
+    // "about", // TODO:
+    "skills",
+    "projects",
+    // "contact" // TODO:
+  ];
   const [activeSection, setActiveSection] = useState("home");
   const sectionChangeHandler = (newActiveSection) => {
     setActiveSection(newActiveSection);
@@ -18,8 +24,8 @@ function App() {
         activeSection={activeSection}
         onChangeSection={sectionChangeHandler}
       />
-      {/* <Main /> */}
-      {/* <Footer /> */}
+      <Main />
+      <Footer />
     </>
   );
 }

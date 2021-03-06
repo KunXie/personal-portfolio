@@ -1,7 +1,28 @@
 .Footer {
-  background-color: var(--second-color);
-  color: #fff;
+  background-color: #fff;
+  color: var(--second-color);
   text-align: center;
   font-weight: var(--font-semi);
   padding: 2rem 0;
+
+  box-shadow: 0 -2px 4px rgba(146, 161, 176, 0.15);
+}
+
+.FooterTitle {
+  font-size: 2rem;
+  margin-bottom: var(--mb-4);
+}
+
+.FooterIcon {
+  font-size: 1.5rem;
+  color: var(--second-color);
+  margin: 0 var(--mb-2);
+}
+
+.FooterIcon:hover {
+  color: var(--first-color);
+}
+
+.FooterSocial {
+  margin-bottom: var(--mb-4);
 }

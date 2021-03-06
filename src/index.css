@@ -55,12 +55,12 @@
 html {
   scroll-behavior: smooth;
 }
-body {
+/* body {
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--second-color);
-}
+} */
 h1,
 h2,
 p {
@@ -79,6 +79,9 @@ img {
   height: auto;
   display: block;
 }
+body {
+  font-family: var(--body-font);
+}
 
 .GridContainer {
   max-width: 1024px;
@@ -88,12 +91,6 @@ img {
   width: calc(100% - 2rem);
   margin-left: var(--mb-2);
   margin-right: var(--mb-2);
-}
-
-@media screen and (min-width: 768px) {
-  body {
-    margin: 0;
-  }
 }
 
 @media screen and (min-width: 1024px) {

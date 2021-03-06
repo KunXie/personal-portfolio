@@ -1,6 +1,6 @@
 import React from "react";
 import { capitalizeFirstLetter } from "../../util/util";
-import BxMenuIcon from "../Icons/MenuIcon";
+import BxMenuIcon from "../Icons/BxMenuIcon";
 import styles from "./Header.module.css";
 
 const Header = ({ sectionList, activeSection, onChangeSection }) => {
