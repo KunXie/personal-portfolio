@@ -19,6 +19,7 @@
 
 .NavLogo {
   color: var(--second-color);
+  font-size: var(--nav-title-font-size);
 }
 
 .NavToggle {
@@ -47,6 +48,7 @@
 .NavLink {
   position: relative;
   color: #fff;
+  font-size: var(--nav-link-font-size);
 }
 
 .Active {

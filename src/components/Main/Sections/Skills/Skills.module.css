@@ -1,8 +1,10 @@
 .Skills {
   /* 原section class */
-  padding-top: 3rem;
-  padding-bottom: 2rem;
-  /* display: flex; */
+  padding-top: 15vh;
+  min-height: calc(100vh - 3rem);
+  display: flex;
+  flex-direction: column;
+  align-self: center;
 }
 
 .SkillsTitle {
@@ -14,7 +16,6 @@
   text-align: center;
 }
 
-/* title的下划线 */
 .SkillsTitle::after {
   position: absolute;
   content: "";
@@ -27,64 +28,29 @@
   background-color: var(--first-color);
 }
 
+.SkillsSubTitle {
+  text-align: left;
+  margin-left: var(--mb-3);
+  margin-bottom: var(--mb-3);
+}
+
 .SkillsContainer {
-}
-
-@media screen and (min-width: 768px) {
-  .Skills {
-    padding-top: 4rem;
-    padding-bottom: 3rem;
-  }
-
-  .SkillsTitle {
-    margin-bottom: var(--mb-6);
-  }
-
-  .SkillsTitle::after {
-    width: 80px;
-    top: 3rem;
-  }
-}
-
-/* Single Skill Component */
-
-.SkillsData {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  position: relative;
-  font-weight: var(--font-semi);
-  padding: 0.5rem 1rem;
-  margin-bottom: var(--mb-4);
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
-}
-
-.SkillsNames {
-  display: flex;
-  align-items: center;
-}
-
-.SkillsIcon {
-  font-size: 2rem;
+  margin-left: var(--mb-2);
   margin-right: var(--mb-2);
-  color: var(--first-color);
-}
-.SkillsName {
-  display: flex;
-  align-items: center;
 }
 
-.SkillsBar {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background-color: var(--first-color);
-  height: 0.25rem;
-  border-radius: 0.5rem;
-  z-index: var(--z-back);
-}
+/* phone screen */
+@media screen and (max-width: 420px) {
+  .Skills {
+    /* 原section class */
+    padding-top: 20px;
+  }
 
-.SkillsHTML {
-  width: 85%;
+  .SkillsContainer {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

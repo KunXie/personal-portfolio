@@ -64,40 +64,27 @@ const Skills = (props) => {
 
   return (
     <section className={styles.Skills} id="skills">
-      <div style={{ width: "100%" }}>
-        <h2 className={styles.SkillsTitle}>Skills</h2>
-      </div>
-
-      <div style={{ width: "100%" }}>
-        {Object.keys(skillsList).map((skillType) => (
-          <React.Fragment key={skillType}>
-            <div>
-              <h2 class="skills__subtitle">
-                {capitalizeFirstLetter(skillType)}
-              </h2>
-            </div>
-            <div
-              style={{
-                width: "100%",
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "flex-start",
-              }}
-            >
-              {skillsList[skillType].map(
-                ({ name, percentage, IconComponent }) => (
-                  <Skill
-                    key={name}
-                    name={name}
-                    percentage={percentage}
-                    IconComponent={IconComponent}
-                  />
-                )
-              )}
-            </div>
-          </React.Fragment>
-        ))}
-      </div>
+      <h2 className={styles.SkillsTitle}>Skills</h2>
+      {Object.keys(skillsList).map((skillType) => (
+        <React.Fragment key={skillType}>
+          <h2 className={styles.SkillsSubTitle}>
+            {capitalizeFirstLetter(skillType)}
+          </h2>
+          <div className={styles.SkillsContainer}>
+            {skillsList[skillType].map(
+              ({ name, percentage, IconComponent }) => (
+                <Skill
+                  className={styles.SkillsItem}
+                  key={name}
+                  name={name}
+                  percentage={percentage}
+                  IconComponent={IconComponent}
+                />
+              )
+            )}
+          </div>
+        </React.Fragment>
+      ))}
     </section>
   );
 };

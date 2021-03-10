@@ -7,22 +7,8 @@
   padding: 0.5rem 1rem;
   margin-bottom: var(--mb-4);
   border-radius: 0.5rem;
-  box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
-  width: 33%;
-}
-
-@media screen and (max-width: 768px) {
-  .SkillsData {
-    width: 50%;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .SkillsData {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  width: 48%;
+  box-shadow: 0 1px 20px rgba(14, 36, 49, 0.15);
 }
 
 .SkillsNames {
@@ -35,6 +21,7 @@
   margin-right: var(--mb-2);
   color: var(--first-color);
 }
+
 .SkillsName {
   display: flex;
   align-items: center;
@@ -52,4 +39,18 @@
 
 .SkillsHTML {
   width: 85%;
+}
+
+/* phone screen */
+@media screen and (max-width: 420px) {
+  .SkillsData {
+    width: 100%;
+    margin-bottom: var(--mb-2);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .SkillsIcon {
+    font-size: 1rem;
+  }
 }

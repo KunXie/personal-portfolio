@@ -1,8 +1,7 @@
 .Main {
   max-width: 1024px;
-  width: calc(100% - 2rem);
-  margin-left: var(--mb-2);
-  margin-right: var(--mb-2);
+  margin-left: auto;
+  margin-right: auto;
   margin-top: var(--header-height);
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
@@ -11,18 +10,10 @@
   /* border: red 1px solid; */
 }
 
-/* for big screen */
-@media screen and (min-width: 1024px) {
-  .Main {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-/* for small screen */
+/* pad screen */
 @media screen and (max-width: 768px) {
   .Main {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }

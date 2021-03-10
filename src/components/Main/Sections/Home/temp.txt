@@ -1,16 +1,23 @@
-/*
- * TODO: 这里还需要再调整，变得Responsive
- * 这个component 一共有三个小块
- * HomeData HomeImage
- */
 .Home {
+  /* composes: GridContainer from "../../../../index.css"; */
   height: calc(100vh - 3rem);
+  row-gap: 1rem;
 }
 
 .HomeData {
   position: absolute;
   top: 25%;
-  margin-left: 50px;
+  align-self: center;
+}
+
+@media screen and (max-width: 420px) {
+  .HomeData {
+    top: 10%;
+  }
+  .HomeTitle {
+    font-size: var(--h2-font-size);
+    margin-bottom: var(--mb-3);
+  }
 }
 
 .HomeTitle {
@@ -39,7 +46,6 @@
 .HomeSocial {
   display: flex;
   flex-direction: row;
-  align-self: flex-end;
 }
 
 .HomeSocialIcon {
@@ -56,39 +62,44 @@
 
 .HomeImage {
   position: absolute;
-  width: 400px;
-  top: 20%;
-  left: 60%;
+  width: 300px;
+  right: 0;
+  bottom: 0;
 }
 
-/* pad screen */
-@media screen and (max-width: 800px) {
-  .HomeData {
-    margin-left: 1%;
+@media screen and (min-width: 768px) {
+  .Home {
+    height: 100vh;
   }
 
-  .HomeTitle {
-    font-size: 3rem;
+  .HomeData {
+    align-self: flex-end;
+  }
+
+  .HomeSocial {
+    padding-top: 0;
+    padding-bottom: 2.5rem;
+    flex-direction: row;
+    align-self: flex-end;
+  }
+
+  .HomeSocialIcon {
+    margin-bottom: 0;
+    margin-right: var(--mb-4);
   }
 
   .HomeImage {
-    width: 300px;
+    width: 457px;
+    left: 55%;
+    bottom: 20%;
   }
 }
 
-/* phone screen */
-@media screen and (max-width: 420px) {
-  .HomeData {
-    left: 8%;
-    top: 15%;
-  }
-
-  .HomeTitle {
-    font-size: 2rem;
-  }
-
+/* 这是我自己的改动 */
+@media screen and (min-width: 1100px) {
   .HomeImage {
-    top: 50%;
-    left: 5%;
+    width: 457px;
+    left: 55%;
+    bottom: 40%;
   }
 }

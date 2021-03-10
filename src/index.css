@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 /*===== VARIABLES CSS =====*/
 :root {
-  --header-height: 3rem;
+  --header-height: 4rem;
   --font-semi: 600;
 }
 
@@ -16,17 +16,24 @@
 /*===== Fuente y tipografia =====*/
 :root {
   --body-font: "Poppins", sans-serif;
-  --big-font-size: 2rem;
+
+  --nav-title-font-size: 1.5rem;
+  --nav-link-font-size: 1rem;
+
+  --big-font-size: 3.5rem;
   --h2-font-size: 1.25rem;
   --normal-font-size: 0.938rem;
 }
-@media screen and (min-width: 768px) {
+
+@media screen and (max-width: 800px) {
+}
+/* @media screen and (min-width: 768px) {
   :root {
     --big-font-size: 3.5rem;
     --h2-font-size: 2rem;
     --normal-font-size: 1rem;
   }
-}
+} */
 
 /*===== Margenes =====*/
 :root {
