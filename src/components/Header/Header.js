@@ -5,38 +5,28 @@ import styles from "./Header.module.css";
 
 const Header = ({ sectionList, activeSection, onChangeSection }) => {
   return (
-    <header className={styles.Header}>
-      <nav className={styles.Nav}>
-        <div>
-          <a href="#" className={styles.NavLogo}>
-            Kun Xie
-          </a>
-        </div>
-
-        <div className={styles.NavMenu} id="nav-menu">
-          <ul className={styles.NavList}>
-            {sectionList.map((sec) => (
-              <li className={styles.NavItem} key={sec}>
-                <a
-                  href={`#${sec}`}
-                  className={
-                    sec === activeSection
-                      ? `${styles.NavLink} ${styles.Active}`
-                      : styles.NavLink
-                  }
-                  onClick={() => onChangeSection(sec)}
-                >
-                  {capitalizeFirstLetter(sec)}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className={styles.NavToggle} id="nav-toggle">
-          <BxMenuIcon />
-        </div>
-      </nav>
+    <header className={styles.NavContainer}>
+      <div className={styles.NavLogo}>
+        <h1>Kun Xie</h1>
+      </div>
+      <input type="checkbox" id="nav-toggle" className={styles.NavToggle} />
+      <label for="nav-toggle" className={styles.NavToggleLabel}>
+        <BxMenuIcon />
+      </label>
+      <ul className={styles.NavItems}>
+        {sectionList.map((section) => (
+          <li className={styles.NavItem} key={section}>
+            <a
+              href={`#${section}`}
+              className={section === activeSection ? styles.Active : ""}
+              onClick={() => onChangeSection(section)}
+            >
+              {capitalizeFirstLetter(section)}
+            </a>
+          </li>
+        ))}
+      </ul>
+       
     </header>
   );
 };

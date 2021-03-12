@@ -1,105 +1,145 @@
-.Header {
-  width: 100%;
-  position: fixed;
+/* :root {
+  --primary-color: #f2f2f2;
+  --secondary-color: #bfbfbf;
+  --third-color: #8c8c8c;
+  --forth-color: #595959;
+  --fifth-color: #262626;
+
+  --hover-color: #732929;
+  --background-color: var(--primary-color);
+  --text-color: var(--forth-color);
+  --highlight-color: var(--fifth-color);
+} */
+
+.NavContainer {
+  height: var(--nav-height);
+  background-color: var(--nav-background-color);
+  text-align: center;
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: var(--z-fixed);
-  background-color: #fff;
-  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
-}
-
-.Nav {
-  composes: GridContainer from "../../index.css";
-  height: var(--header-height);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: var(--font-semi);
+  width: 100%;
+  z-index: 100;
 }
 
 .NavLogo {
-  color: var(--second-color);
-  font-size: var(--nav-title-font-size);
+  color: var(--nav-text-color);
+  padding: 20px 0;
 }
 
-.NavToggle {
-  color: var(--second-color);
-  font-size: 1.5rem;
-  cursor: pointer;
-}
+.NavItems {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
-@media screen and (max-width: 768px) {
-  .NavMenu {
-    position: fixed;
-    top: var(--header-height);
-    right: -100%;
-    width: 80%;
-    height: 100%;
-    padding: 2rem;
-    background-color: var(--second-color);
-    transition: 0.5s;
-  }
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--nav-background-color);
+  text-align: left;
+
+  display: none;
 }
 
 .NavItem {
-  margin-bottom: var(--mb-4);
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.NavLink {
-  position: relative;
-  color: #fff;
-  font-size: var(--nav-link-font-size);
+.NavItem a {
+  color: var(--text-color);
+  font-size: 1rem;
+  text-decoration: none;
 }
 
-.Active {
-  position: relative;
+.NavItem a:hover {
+  color: var(--nav-hover-color);
 }
 
-/* 这里就是一个下划线  */
-.Active::after {
+.NavToggle {
+  display: none;
+}
+
+.NavToggle:checked ~ .NavToggleLabel {
+  color: var(--highlight-color);
+}
+
+.NavToggle:checked ~ .NavItems {
+  display: block;
+}
+
+.NavToggleLabel {
   position: absolute;
-  content: "";
-  width: 100%;
-  height: 0.18rem;
+  top: 0;
   left: 0;
-  top: 2rem;
-  background-color: var(--first-color);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 1.5rem;
+  color: var(--nav-text-color);
 }
 
-.NavLink:hover {
-  position: relative;
-}
-
-.NavLink:hover::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 0.18rem;
-  left: 0;
-  top: 2rem;
-  background-color: var(--first-color);
-}
-
-@media screen and (min-width: 768px) {
-  .Nav {
-    height: calc(var(--header-height) + 1rem);
-  }
-
-  .NavList {
-    display: flex;
-    padding-top: 0;
-  }
-
-  .NavItem {
-    margin-left: var(--mb-6);
-    margin-bottom: 0;
-  }
-
-  .NavToggle {
+/* iPad screen and larger */
+@media screen and (min-width: 800px) {
+  .NavToggleLabel {
     display: none;
   }
 
-  .NavLink {
-    color: var(--second-color);
+  .NavContainer {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(400px, 3fr) 1fr;
+  }
+
+  .NavLogo {
+    grid-column: 2 / 3;
+  }
+
+  /* 这里有一个小瑕疵，当打开toggle的时候，再缩小，这个display: block 会继承过去 */
+  .NavToggle:checked ~ .NavItems {
+    display: flex;
+  }
+
+  .NavItems {
+    all: unset;
+    grid-column: 3 / 4;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style: none;
+  }
+
+  .NavItem {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .NavItem a {
+    position: relative;
+  }
+
+  /* animated outline */
+  .NavItem a::before {
+    content: "";
+    display: block;
+    height: 5px;
+    background: var(--nav-hover-color);
+    position: absolute;
+    top: -0.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transform-origin: right;
+    transition: transform ease-in-out 250ms;
+  }
+
+  .NavItem a:hover::before {
+    transform: scale(1, 1);
+  }
+
+  .NavItem a.Active::before {
+    transform: scale(1, 1);
+    color: var(--nav-hover-color);
   }
 }

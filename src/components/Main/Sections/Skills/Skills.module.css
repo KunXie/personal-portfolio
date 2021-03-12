@@ -1,7 +1,10 @@
 .Skills {
+  width: 100%;
+  grid-column: 2 / 3;
+
   /* 原section class */
-  padding-top: 15vh;
-  min-height: calc(100vh - 3rem);
+  padding-top: 5vh;
+  min-height: calc(80vh - 3rem);
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -35,11 +38,20 @@
 }
 
 .SkillsContainer {
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-between; */
   margin-left: var(--mb-2);
   margin-right: var(--mb-2);
+  display: grid;
+  grid-template-columns: auto;
+  place-items: center;
+}
+
+@media screen and (min-width: 900px) {
+  .SkillsContainer {
+    grid-template-columns: auto auto;
+  }
 }
 
 /* phone screen */

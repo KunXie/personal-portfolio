@@ -1,8 +1,6 @@
 import React from "react";
 import { capitalizeFirstLetter } from "../../../../util/util";
 
-import BxlHtml5Icon from "../../../Icons/BxlHtml5Icon";
-import BxlJavascriptIcon from "../../../Icons/BxlJavascriptIcon";
 import MsqlServerIcon from "../../../Icons/Devicons/MsqlServerIcon";
 import AngularIcon from "../../../Icons/MaterialDesign/AngularIcon";
 import LanguageHtml5Icon from "../../../Icons/MaterialDesign/LanguageHtml5Icon";

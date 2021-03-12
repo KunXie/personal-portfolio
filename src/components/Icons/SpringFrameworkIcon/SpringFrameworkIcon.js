@@ -1,7 +1,5 @@
 import React from "react";
 
-import SpringFrameworkIconSvg from "./springio-icon.svg";
-
 const SpringFrameworkIcon = (props) => {
   return (
     <svg

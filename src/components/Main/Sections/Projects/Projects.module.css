@@ -1,10 +1,33 @@
 .Projects {
-  padding-top: 15vh;
-  min-width: calc(100vh -3rem);
+  grid-column: 2 / 3;
+  min-height: calc(80vh - 3rem);
   display: flex;
   flex-direction: column;
-  align-self: center;
+  /* align-self: center; */
 }
 
 .Title {
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+  margin-top: var(--mb-2);
+  margin-bottom: var(--mb-4);
+  text-align: center;
+}
+
+.Title::after {
+  position: absolute;
+  content: "";
+  width: 100px;
+  height: 0.18rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 2rem; /* 改了这里 */
+  background-color: var(--first-color);
+}
+
+.ProjectsContainer {
+  display: flex;
+  flex-wrap: wrap;
 }

@@ -4,22 +4,36 @@
  * HomeData HomeImage
  */
 .Home {
-  height: calc(100vh - 3rem);
+  width: 100%;
+  grid-column: 2 / 3;
+  /* 这里用 flex 来控制HomeData 和 HomeImage */
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .HomeData {
-  position: absolute;
-  top: 25%;
-  margin-left: 50px;
+  margin: auto;
 }
 
 .HomeTitle {
-  font-size: var(--big-font-size);
-  margin-bottom: var(--mb-5);
+  font-size: var(--home-title-font-size);
+  margin-bottom: var(--mb-3);
 }
 
 .HomeTitleColor {
   color: var(--first-color);
+}
+
+.HomeImage {
+  margin: auto;
+  margin-bottom: var(--mb-3);
+  width: var(--home-image-width);
+}
+
+.HomeData,
+.HomeImage {
+  margin-top: var(--home-margin-top);
+  margin-bottom: var(--home-margin-top);
 }
 
 .ContactButton {
@@ -29,17 +43,7 @@
   padding: 0.75rem 2.5rem;
   font-weight: var(--font-semi);
   border-radius: 0.5rem;
-  margin-bottom: var(--mb-5);
-}
-
-.ContactButton:hover {
-  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
-}
-
-.HomeSocial {
-  display: flex;
-  flex-direction: row;
-  align-self: flex-end;
+  margin-bottom: var(--mb-3);
 }
 
 .HomeSocialIcon {
@@ -54,41 +58,10 @@
   box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
 }
 
-.HomeImage {
-  position: absolute;
-  width: 400px;
-  top: 20%;
-  left: 60%;
+.ContactButton:hover {
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
 }
 
-/* pad screen */
-@media screen and (max-width: 800px) {
-  .HomeData {
-    margin-left: 1%;
-  }
-
-  .HomeTitle {
-    font-size: 3rem;
-  }
-
-  .HomeImage {
-    width: 300px;
-  }
-}
-
-/* phone screen */
-@media screen and (max-width: 420px) {
-  .HomeData {
-    left: 8%;
-    top: 15%;
-  }
-
-  .HomeTitle {
-    font-size: 2rem;
-  }
-
-  .HomeImage {
-    top: 50%;
-    left: 5%;
-  }
+/* TODO: 这里还要重新改一改 */
+@media screen and (min-width: 1200px) {
 }

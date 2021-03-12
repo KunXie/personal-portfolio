@@ -1,19 +1,25 @@
 .Main {
-  max-width: 1024px;
+  display: grid;
+  width: 100vw;
+  grid-template-columns: 1fr minmax(400px, 4fr) 1fr;
+  /* grid-row: 1fr 1fr; */
+  /* grid-template-areas: ". home ."; */
+
+  /* max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
   margin-top: var(--header-height);
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  color: var(--second-color);
+  color: var(--second-color); */
   /*TODO: DEBUG*/
   /* border: red 1px solid; */
 }
 
 /* pad screen */
 @media screen and (max-width: 768px) {
-  .Main {
+  /* .Main {
     margin-left: 1rem;
     margin-right: 1rem;
-  }
+  } */
 }
