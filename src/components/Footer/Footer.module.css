@@ -1,5 +1,5 @@
 .Footer {
-  background-color: #fff;
+  background-color: var(--nav-background-color);
   color: var(--second-color);
   text-align: center;
   font-weight: var(--font-semi);

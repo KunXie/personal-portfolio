@@ -1,6 +1,6 @@
 .Skills {
   width: 100%;
-  grid-column: 2 / 3;
+  /* grid-column: 2 / 3; */
 
   /* 原section class */
   padding-top: 5vh;
@@ -12,7 +12,7 @@
 
 .SkillsTitle {
   position: relative;
-  font-size: var(--h2-font-size);
+  font-size: var(--skill-title-font-size);
   color: var(--first-color);
   margin-top: var(--mb-2);
   margin-bottom: var(--mb-4);
@@ -32,37 +32,33 @@
 }
 
 .SkillsSubTitle {
-  text-align: left;
+  font-size: var(--skill-subtitle-font-size);
+  text-align: center;
   margin-left: var(--mb-3);
   margin-bottom: var(--mb-3);
 }
 
 .SkillsContainer {
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; */
-  margin-left: var(--mb-2);
-  margin-right: var(--mb-2);
+  margin-left: auto;
+  margin-right: auto;
   display: grid;
   grid-template-columns: auto;
   place-items: center;
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; */
 }
 
 @media screen and (min-width: 900px) {
   .SkillsContainer {
     grid-template-columns: auto auto;
+    column-gap: 50px;
   }
 }
 
-/* phone screen */
-@media screen and (max-width: 420px) {
-  .Skills {
-    /* 原section class */
-    padding-top: 20px;
-  }
-
+@media screen and (min-width: 1500px) {
   .SkillsContainer {
-    margin-left: auto;
-    margin-right: auto;
+    grid-template-columns: auto auto auto;
+    column-gap: 60px;
   }
 }

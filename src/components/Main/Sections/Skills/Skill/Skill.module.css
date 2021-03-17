@@ -7,10 +7,16 @@
   padding: 0.5rem 1rem;
   margin-bottom: var(--mb-4);
   border-radius: 0.5rem;
-  width: 400px;
+  width: calc(100vw - 2 * var(--margin-x-skill));
   box-shadow: 0 1px 20px rgba(14, 36, 49, 0.15);
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: var(--margin-x-skill);
+  margin-right: var(--margin-x-skill);
+}
+
+@media screen and (min-width: 420px) {
+  .SkillsData {
+    width: calc(400px - 2 * var(--margin-x-skill));
+  }
 }
 
 .SkillsNames {

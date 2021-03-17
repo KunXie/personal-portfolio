@@ -11,29 +11,31 @@ const Projects = (props) => {
   const projectsList = [
     {
       name: "Calculator",
-      description: [
-        "implemented an iOS14 calculator clone using HTML/CSS with Javascript",
-        "implemented layout with CSS grid and CSS variable",
-      ],
+      tags: ["JavaScript", "HTML", "CSS Grid", "CSS Custom Properties"],
+      description: ["An iOS14 calculator clone"],
       ImageComponent: <img src={Calculator} alt="Calculaor screen shot" />,
       sourceLink: "https://stackblitz.com/edit/calculator-ios14",
       demoLink: "https://calculator-ios14.stackblitz.io/",
     },
     {
       name: "Sudoku game",
-      description: [
-        "implemented an Sudoku game using HTML/CSS with Typescript",
-        "adopted backtracking and Fisher–Yates algorithms for solving and generating Sudoku puzzle",
-      ],
+      tags: ["TypeScript", "HTML/CSS", "Backtracking Algo"],
+      description: ["An Sudoku game"],
       ImageComponent: <img src={Sudoku} alt="Sudoku screen shot" />,
       link: "https://sudoku-kunxie.stackblitz.io/",
     },
     {
       name: "Chat App",
-      description: [
-        "implemented an Chat App using NodeJS, React and GraphQL",
-        "Backed end",
+      tags: [
+        "JavaScript",
+        "Bootstrap",
+        "Apollo",
+        "GraphQL",
+        "Sequelize ORM",
+        "MySQL",
+        "AWS",
       ],
+      description: ["An full-stack Chat App"],
       ImageComponent: <img src={Sudoku} alt="Sudoku screen shot" />,
       link: "https://sudoku-kunxie.stackblitz.io/",
     },
@@ -52,6 +54,7 @@ const Projects = (props) => {
             ImageComponent={p.ImageComponent}
             sourceLink={p.sourceLink}
             demoLink={p.demoLink}
+            tags={p.tags}
           />
         ))}
       </div>

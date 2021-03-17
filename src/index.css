@@ -11,16 +11,22 @@
 /*===== Colores =====*/
 :root {
   /* --first-color: #4070f4; */
-  --first-color: #4070f4;
-  --second-color: #0e2431;
+  --first-color: #059edb;
+  --second-color: #595959;
 
   --nav-background-color: #f2f2f2;
-  --nav-hover-color: #732929;
+  --nav-hover-color: var(--first-color);
   --nav-text-color: #595959;
   --background-color: var(--primary-color);
+
+  --tag-background-color: var(--first-color);
+  --tag-text-color: #f2f2f2;
+
+  --project-cover-bg-color: #059edbc7;
+  --project-cover-tag-bg-color: #f2f2f2;
+  --project-cover-tag-txt-color: var(--first-color);
 }
 
-/*===== Fuente y tipografia =====*/
 :root {
   --body-font: "Poppins", sans-serif;
 
@@ -30,9 +36,14 @@
   --home-title-font-size: 2rem;
   --home-image-width: 200px;
 
+  --skill-title-font-size: 1.25rem;
+  --skill-subtitle-font-size: 1.1em;
+
   --big-font-size: 3.5rem;
   --h2-font-size: 1.25rem;
   --normal-font-size: 0.938rem;
+
+  --margin-x-skill: 5px;
 }
 
 /* iPad screen and larger */
@@ -40,22 +51,20 @@
   :root {
     --home-title-font-size: 2.5rem;
     --home-image-width: 200px;
-    --home-margin-top: 3rem;
   }
 }
 
 @media screen and (min-width: 1024px) {
   :root {
-    --home-title-font-size: 2.6rem;
+    --home-title-font-size: 3.5rem;
     --home-image-width: 250px;
-    --home-margin-top: 15rem;
   }
 }
 
 /* extra big screen */
 @media screen and (min-width: 1200px) {
   :root {
-    --home-title-font-size: 3rem;
+    --home-title-font-size: 4rem;
     --home-image-width: 400px;
     --home-margin-top: 15rem;
   }

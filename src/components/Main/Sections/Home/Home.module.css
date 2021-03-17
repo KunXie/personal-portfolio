@@ -5,10 +5,17 @@
  */
 .Home {
   width: 100%;
-  grid-column: 2 / 3;
-  /* 这里用 flex 来控制HomeData 和 HomeImage */
+  height: 85vh;
+  /* grid-column: 2 / 3; */
+
+  display: grid;
+  place-items: center;
+}
+
+.HomeContainer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .HomeData {
@@ -17,7 +24,6 @@
 
 .HomeTitle {
   font-size: var(--home-title-font-size);
-  margin-bottom: var(--mb-3);
 }
 
 .HomeTitleColor {
@@ -26,14 +32,7 @@
 
 .HomeImage {
   margin: auto;
-  margin-bottom: var(--mb-3);
   width: var(--home-image-width);
-}
-
-.HomeData,
-.HomeImage {
-  margin-top: var(--home-margin-top);
-  margin-bottom: var(--home-margin-top);
 }
 
 .ContactButton {
@@ -60,8 +59,4 @@
 
 .ContactButton:hover {
   box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
-}
-
-/* TODO: 这里还要重新改一改 */
-@media screen and (min-width: 1200px) {
 }

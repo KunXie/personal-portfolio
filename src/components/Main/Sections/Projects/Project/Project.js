@@ -8,35 +8,58 @@ const Project = ({
   link,
   sourceLink,
   demoLink,
+  tags,
 }) => {
   return (
     <div className={styles.Project}>
-      <div className={styles.ProjectImage}>{ImageComponent}</div>
+      <div className={styles.ProjectImage}>
+        <div
+          style={{
+            height: "100px",
+            width: "100px",
+            overflow: "hidden",
+            borderRadius: "50px",
+          }}
+        >
+          {ImageComponent}
+        </div>
+      </div>
       <div className={styles.ProjectData}>
-        <h1 className={styles.Title}>{name}</h1>
-        <ul className={styles.DescriptList}>
-          {description.map((d, index) => (
-            <li key={index} className={styles.DescriptionItem}>
-              {d}
-            </li>
-          ))}
-          <li>
-            {sourceLink && (
-              <span>
-                <a className={styles.Button} href={sourceLink} target="_blank">
-                  Source Code
-                </a>
-              </span>
-            )}
-            {demoLink && (
-              <span style={{ marginLeft: "15px" }}>
-                <a className={styles.Button} href={demoLink} target="_blank">
-                  Live Demo
-                </a>
-              </span>
-            )}
-          </li>
-        </ul>
+        <div>
+          <h1 className={styles.Title}>{name}</h1>
+          <ul className={styles.DescriptList}>
+            {description.map((d, index) => (
+              <li key={index} className={styles.DescriptionItem}>
+                {d}
+              </li>
+            ))}
+          </ul>
+          <ul className={styles.Tags}>
+            {tags.map((tag, index) => (
+              <li key={index} className={styles.Tag}>
+                {tag}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div className={styles.Cover}>
+        <div>
+          {sourceLink && (
+            <span>
+              <a className={styles.CoverTag} href={sourceLink} target="_blank">
+                Source Code
+              </a>
+            </span>
+          )}
+          {demoLink && (
+            <span style={{ marginLeft: "15px" }}>
+              <a className={styles.CoverTag} href={demoLink} target="_blank">
+                Live Demo
+              </a>
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -26,7 +26,7 @@ const Skills = (props) => {
         IconComponent: LanguageHtml5Icon,
       },
       {
-        name: "Javascript/TypeScript",
+        name: "Javascript / TypeScript",
         percentage: "85%",
         IconComponent: LanguageJavascriptIcon,
       },
